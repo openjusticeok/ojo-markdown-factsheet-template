@@ -57,8 +57,8 @@
   \thispagestyle{empty}
   \begin{tikzpicture}[remember picture, overlay]
     \draw 
-      node[anchor=south west, minimum height=0.5in, minimum width=8.5in, text width=8in] at ($(current page.south west) + (0.75in,0.13in)$) 
-      {\thepage \space \rule{400pt}{3pt}
+      node[anchor=south west, minimum height=0.5in, minimum width=8.5in, text width=8in] at ($(current page.south west) + (0in,0in)$) 
+      {\thepage \space \space \rule{450pt}{3pt}
       \textcolor{black}{openjustice.okpolicy.org}};
   \end{tikzpicture}
 }
@@ -86,9 +86,20 @@
   \end{center}
 }
 
+% % contact information
+% \newcommand{\footer}[0]{
+%   \thispagestyle{empty}
+%   \begin{tikzpicture}[remember picture, overlay]
+%     \draw 
+%       node[anchor=south west, minimum height=0.5in, minimum width=8.5in, text width=8in] at ($(current page.south west) + (0in,0in)$) 
+%       {\thepage \space \space \rule{450pt}{3pt}
+%       \textcolor{black}{openjustice.okpolicy.org}};
+%   \end{tikzpicture}
+% }
+
 % heading 1
-\newcommand{\urbnheadingone}[1]{
-  \textbf{\LARGE{\\} \large{#1}}
+\newcommand{\heading}[1]{
+  {\color{yellow}\rule{5pt}{15pt}} \textbf{\LARGE{\\} \large{#1}}
 }
 
 % heading 2
