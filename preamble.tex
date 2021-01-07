@@ -31,7 +31,6 @@
 \usepackage{enumitem}                   % bullet alignment
 \setlist[2]{nosep}                      % sets the itemsep and parsep for all level two lists to 0
 \setenumerate{nosep}                    % sets no itemsep for enumerate lists only
-\pagenumbering{gobble}                  % disable page numbering
 \usepackage[hang,flushmargin]{footmisc} % don't indent footnotes
 \usepackage[document]{ragged2e}         % ragged right
 \usepackage[none]{hyphenat}             % disable work breaks
@@ -54,20 +53,13 @@
 }
 
 % contact information
-\newcommand{\contactinfo}[0]{
+\newcommand{\footer}[0]{
   \thispagestyle{empty}
   \begin{tikzpicture}[remember picture, overlay]
     \draw 
       node[anchor=south west, minimum height=0.5in, minimum width=8.5in, text width=8in] at ($(current page.south west) + (0.75in,0.13in)$) 
-      {\color{gray}Open Justice OK \space
-      \color{yellow}$\blacksquare$ \space
-      \color{gray}907 S Detroit Ave \space
-      \color{yellow}$\blacksquare$ \space
-      \color{gray}Tulsa, OK 74120 \space
-      \color{yellow}$\blacksquare$ \space
-      \color{gray}918.794.3944 \space
-      \color{yellow}$\blacksquare$ \space
-      \textcolor{black}{www.openjustice.okpolicy.org}};
+      {\thepage \space \rule{400pt}{3pt}
+      \textcolor{black}{openjustice.okpolicy.org}};
   \end{tikzpicture}
 }
 
