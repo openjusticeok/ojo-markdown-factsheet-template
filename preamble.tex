@@ -16,6 +16,7 @@
 \usepackage[export]{adjustbox}  % enables two column images at the top
 \usepackage{makecell}           % for library(kableExtra)
 %\usepackage{tabularx}           % for library(kableExtra)
+\usepackage{fancyhdr}           %includes fancy header package
 
 % set font encoding for PDFLaTeX or XeLaTeX
 \usepackage[utf8]{inputenc}   % sets document encoding to utf8
@@ -42,6 +43,7 @@
 }
 \usepackage{parskip}
 \setlength{\parskip}{0.1in}               % set paragraph spacing
+\pagestyle{fancy}
 
 % Open Justice Oklahoma logo
 \newcommand{\ojologo}[0]{
@@ -99,7 +101,7 @@
 
 % heading 1
 \newcommand{\heading}[1]{
-  {\color{yellow}\rule{5pt}{15pt}} \textbf{\LARGE{\\} \large{#1}}
+  {\color{yellow}\rule{5pt}{15pt}} \space \textbf{\LARGE{\\} \large{#1}}
 }
 
 % heading 2
