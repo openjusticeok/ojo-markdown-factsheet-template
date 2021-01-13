@@ -1,10 +1,9 @@
 ---
 header-includes:
 - \input{preamble.tex}
+mainfont: lato
 fontsize: 10pt
 output: pdf_document
-sansfont: lato
-font:     lato
 geometry: "left=0.35in,right=0.35in,top=0.35in,bottom=0.6in"
 urlcolor: #169d62
 ---
