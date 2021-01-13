@@ -11,12 +11,14 @@
 \usepackage{colortbl}
 \usepackage{pdflscape}
 \usepackage{tabu}
+\usepackage{graphicx}
 \usepackage{threeparttable}
 \usepackage[normalem]{ulem}
 \usepackage[export]{adjustbox}  % enables two column images at the top
 \usepackage{makecell}           % for library(kableExtra)
 %\usepackage{tabularx}           % for library(kableExtra)
 \usepackage{fancyhdr}           %includes fancy header package
+\usepackage[most]{tcolorbox}
 
 % set font encoding for PDFLaTeX or XeLaTeX
 \usepackage[utf8]{inputenc}   % sets document encoding to utf8
@@ -48,9 +50,9 @@
 % Open Justice Oklahoma logo
 \newcommand{\ojologo}[0]{
   \begin{figure}
-    \hspace{-0.12in}
-    \includegraphics[width=1.5in]{design/cropped-OJO_Logo_Black.jpg}
-    \label{fig:boat1}
+    \begin{flushright}
+      \includegraphics[width=1.5in,keepaspectratio]{design/cropped-OJO_Logo_Black.jpg}
+    \end{flushright}
   \end{figure}
 }
 
@@ -66,18 +68,15 @@
 }
 
 % titles (14pt font)
-\newcommand{\urbntitle}[1]{
-  \begin{center}
+\newcommand{\ojotitle}[1]{
       \textbf{\LARGE{#1}}
-  \end{center}
 }
   
 % subtitles (12pt font)
-\newcommand{\urbnsubtitle}[1]{
-  \begin{center}
-    \Large{\textcolor{urbnblue}{#1}}
-    \vspace{0.25in}    
-  \end{center}
+\newcommand{\ojosubtitle}[1]{
+  \begin{flushleft}
+    \Large{{#1}}    
+  \end{flushleft}
 }
 
 % authors (11pt font)
@@ -88,20 +87,23 @@
   \end{center}
 }
 
-% % contact information
-% \newcommand{\footer}[0]{
-%   \thispagestyle{empty}
-%   \begin{tikzpicture}[remember picture, overlay]
-%     \draw 
-%       node[anchor=south west, minimum height=0.5in, minimum width=8.5in, text width=8in] at ($(current page.south west) + (0in,0in)$) 
-%       {\thepage \space \space \rule{450pt}{3pt}
-%       \textcolor{black}{openjustice.okpolicy.org}};
-%   \end{tikzpicture}
-% }
-
 % heading 1
 \newcommand{\heading}[1]{
-  {\color{yellow}\rule{5pt}{15pt}} \space \textbf{\LARGE{\\} \large{#1}}
+  {\color{yellow}\rule{5pt}{15pt}} \textbf{\LARGE{\\} \large{#1}}
+}
+
+%code to try new heading
+\newtcbox{newhead}[1][]{%
+  enhanced,
+  frame hidden,
+  colback=white,
+  fontupper=\textbf{\LARGE{\\} \large{#1}},
+  left=0pt,
+  nobeforeafter,
+  top=0pt,
+  bottom=0pt,
+  borderline west={5pt}{0mm}{yellow},
+  #1
 }
 
 % heading 2
