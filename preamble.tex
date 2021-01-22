@@ -24,6 +24,8 @@
 \usepackage[utf8]{inputenc}   % sets document encoding to utf8
 \usepackage[default]{lato}    % sets default font to Lato
 \usepackage[T1]{fontenc}
+%\usepackage{fontspec}         %Font package
+%\setmainfont{Pluto Sans Cond Bold}  
 \usepackage{tikz}
 \usetikzlibrary{calc}
 \usepackage{memhfixc}
@@ -56,14 +58,21 @@
   \end{figure}
 }
 
+% Open Justice Oklahoma logo
+\newcommand{\ojologotrial}[0]{
+  \begin{wrapfigure}{r}{.25\textwidth}
+      \includegraphics[width=2in,keepaspectratio]{design/cropped-OJO_Logo_Black.jpg}
+  \end{wrapfigure}
+}
+
 % contact information
 \newcommand{\footer}[0]{
   \thispagestyle{empty}
   \begin{tikzpicture}[remember picture, overlay]
     \draw 
       node[anchor=south west, minimum height=0.5in, minimum width=8.5in, text width=8in] at ($(current page.south west) + (0in,0in)$) 
-      {\thepage \space \space \rule{450pt}{3pt}
-      \textcolor{black}{openjustice.okpolicy.org}};
+      {\thepage \space \space \rule{475pt}{3pt}
+      \textcolor{black}{OpenJusticeOK.org}};
   \end{tikzpicture}
 }
 
@@ -93,15 +102,28 @@
 }
 
 %code to try new heading
-\newtcbox{newhead}[1][]{%
+\newtcolorbox{newhead}[1][]{%
   enhanced,
   frame hidden,
   colback=white,
-  fontupper=\textbf{\LARGE{\\} \large{#1}},
   left=0pt,
   nobeforeafter,
-  top=0pt,
-  bottom=0pt,
+  top=-.75pt,
+  bottom=-.75pt,
+  borderline west={5pt}{0mm}{yellow},
+  #1
+}
+
+%code to try new heading SECOND TIME -- edit comment later
+\newtcbox{newheadtwo}[1][]{%
+  enhanced,
+  frame hidden,
+  colback=white,
+  fontupper=\bfseries \Large,
+  left=0pt,
+  nobeforeafter,
+  top=-.75pt,
+  bottom=-.75pt,
   borderline west={5pt}{0mm}{yellow},
   #1
 }
