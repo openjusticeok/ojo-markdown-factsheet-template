@@ -25,15 +25,15 @@ library(urbnthemes)
 set_urbn_defaults(style = "print")
 ```
 
-\begin{tcolorbox}[boxrule=0pt,arc=0pt,colback=gray]
+\begin{tcolorbox}[boxrule=0pt,arc=0pt,colback=black,width=\paperwidth]
 
 \setlength\intextsep{0pt}
 \ojologo
 
 \vspace{10mm}\begin{ojomainheader}
-\ojotitle{~~Title of a Simple Factsheet Template.} \vspace{2mm}
-\ojosubtitle{~~Analysis by Open Justice Oklahoma Director}
-\ojosubtitle{~~Ryan Gentzler / rgentzler@okpolicy.org}
+\ojotitle{\color{white}~~Title of a Simple Factsheet Template} \vspace{2mm}
+\ojosubtitle{\color{white}~~Analysis by Open Justice Oklahoma Director}
+\ojosubtitle{\color{white}~~Ryan Gentzler / rgentzler@okpolicy.org}
 \end{ojomainheader} \vspace{6mm}
 
 \end{tcolorbox}

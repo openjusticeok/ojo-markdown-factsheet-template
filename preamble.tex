@@ -19,6 +19,7 @@
 %\usepackage{tabularx}           % for library(kableExtra)
 \usepackage{fancyhdr}           %includes fancy header package
 \usepackage[most]{tcolorbox}
+\usepackage{xcolor}
 
 % set font encoding for PDFLaTeX or XeLaTeX
 \usepackage[utf8]{inputenc}   % sets document encoding to utf8
@@ -49,10 +50,6 @@
 \setlength{\parskip}{0.1in}               % set paragraph spacing
 \pagestyle{fancy}
 
-
-%trying color box
-\newtcolorbox{mybox}{colback=grey!5!white}
-
 % % Open Justice Oklahoma logo
 % \newcommand{\ojologo}[0]{
 %   \begin{figure}
@@ -65,7 +62,7 @@
 % Open Justice Oklahoma logo
 \newcommand{\ojologo}[0]{
   \begin{wrapfigure}{r}{.25\textwidth}
-      \includegraphics[width=2in,keepaspectratio]{design/cropped-OJO_Logo_Black.jpg}
+      \includegraphics[width=2in,keepaspectratio]{design/OJO-Logo-White.png}
   \end{wrapfigure}
 }
 
@@ -103,7 +100,7 @@
 \newtcolorbox{ojomainheader}[1][]{%
   enhanced,
   frame hidden,
-  colback=white,
+  colback=black,
   left=0pt,
   nobeforeafter,
   top=-4pt,

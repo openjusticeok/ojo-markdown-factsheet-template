@@ -4,3 +4,6 @@ Fix: \ojotitle
   - Possible solutions:
     * Try to hard code an indent from the vertical line and text in the preamble
     * Add another \ojotitle line (before the \vspace) for the second line of the title
+    
+Fix: Header (in black)
+  - Make black area go to page edge
