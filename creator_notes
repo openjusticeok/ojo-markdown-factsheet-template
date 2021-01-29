@@ -1,0 +1,6 @@
+Fix: \ojotitle
+  - A second line in the title will cause the indention to not perform properly
+  - Currently using two ~ symbols to create space between the vertical line and text
+  - Possible solutions:
+    * Try to hard code an indent from the vertical line and text in the preamble
+    * Add another \ojotitle line (before the \vspace) for the second line of the title

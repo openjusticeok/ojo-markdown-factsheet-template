@@ -49,17 +49,21 @@
 \setlength{\parskip}{0.1in}               % set paragraph spacing
 \pagestyle{fancy}
 
-% Open Justice Oklahoma logo
-\newcommand{\ojologo}[0]{
-  \begin{figure}
-    \begin{flushright}
-      \includegraphics[width=1.5in,keepaspectratio]{design/cropped-OJO_Logo_Black.jpg}
-    \end{flushright}
-  \end{figure}
-}
+
+%trying color box
+\newtcolorbox{mybox}{colback=grey!5!white}
+
+% % Open Justice Oklahoma logo
+% \newcommand{\ojologo}[0]{
+%   \begin{figure}
+%     \begin{flushright}
+%       \includegraphics[width=1.5in,keepaspectratio]{design/cropped-OJO_Logo_Black.jpg}
+%     \end{flushright}
+%   \end{figure}
+% }
 
 % Open Justice Oklahoma logo
-\newcommand{\ojologotrial}[0]{
+\newcommand{\ojologo}[0]{
   \begin{wrapfigure}{r}{.25\textwidth}
       \includegraphics[width=2in,keepaspectratio]{design/cropped-OJO_Logo_Black.jpg}
   \end{wrapfigure}
@@ -71,8 +75,7 @@
   \begin{tikzpicture}[remember picture, overlay]
     \draw 
       node[anchor=south west, minimum height=0.5in, minimum width=8.5in, text width=8in] at ($(current page.south west) + (0in,0in)$) 
-      {\thepage \space \space \rule{475pt}{3pt}
-      \textcolor{black}{OpenJusticeOK.org}};
+      {\thepage \space \rule{485pt}{3pt}\textcolor{black}{~OpenJusticeOK.org}};
   \end{tikzpicture}
 }
 
@@ -96,34 +99,29 @@
   \end{center}
 }
 
-% heading 1
-\newcommand{\heading}[1]{
-  {\color{yellow}\rule{5pt}{15pt}} \textbf{\LARGE{\\} \large{#1}}
-}
-
-%code to try new heading
-\newtcolorbox{newhead}[1][]{%
+%header for 1st page
+\newtcolorbox{ojomainheader}[1][]{%
   enhanced,
   frame hidden,
   colback=white,
   left=0pt,
   nobeforeafter,
-  top=-.75pt,
-  bottom=-.75pt,
+  top=-4pt,
+  bottom=-7pt,
   borderline west={5pt}{0mm}{yellow},
   #1
 }
 
-%code to try new heading SECOND TIME -- edit comment later
-\newtcbox{newheadtwo}[1][]{%
+%heading command
+\newtcbox{heading}[1][]{%
   enhanced,
   frame hidden,
   colback=white,
   fontupper=\bfseries \Large,
   left=0pt,
   nobeforeafter,
-  top=-.75pt,
-  bottom=-.75pt,
+  top=-4pt,
+  bottom=-6.5pt,
   borderline west={5pt}{0mm}{yellow},
   #1
 }
