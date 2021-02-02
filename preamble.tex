@@ -50,19 +50,17 @@
 \setlength{\parskip}{0.1in}               % set paragraph spacing
 \pagestyle{fancy}
 
-% % Open Justice Oklahoma logo
-% \newcommand{\ojologo}[0]{
-%   \begin{figure}
-%     \begin{flushright}
-%       \includegraphics[width=1.5in,keepaspectratio]{design/cropped-OJO_Logo_Black.jpg}
-%     \end{flushright}
-%   \end{figure}
-% }
-
 % Open Justice Oklahoma logo
 \newcommand{\ojologo}[0]{
   \begin{wrapfigure}{r}{.25\textwidth}
       \includegraphics[width=2in,keepaspectratio]{design/OJO-Logo-White.png}
+  \end{wrapfigure}
+}
+
+% Cropped Open Justice Oklahoma logo
+\newcommand{\croppedojologo}[0]{
+  \begin{wrapfigure}{r}{.25\textwidth}
+      \includegraphics[width=.65in,keepaspectratio]{design/cropped-OJO-Logo-White.png}
   \end{wrapfigure}
 }
 
@@ -76,19 +74,19 @@
   \end{tikzpicture}
 }
 
-% titles (14pt font)
+% titles (pt font)
 \newcommand{\ojotitle}[1]{
-      \textbf{\LARGE{#1}}
+      \textbf{\huge{#1}}
 }
   
-% subtitles (12pt font)
+% subtitles (pt font)
 \newcommand{\ojosubtitle}[1]{
   \begin{flushleft}
     \Large{{#1}}    
   \end{flushleft}
 }
 
-% authors (11pt font)
+% authors (pt font)
 \newcommand{\ojoauthors}[1]{
   \begin{center}
     \textit{\large{#1}}

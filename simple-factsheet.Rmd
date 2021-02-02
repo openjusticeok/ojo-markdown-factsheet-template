@@ -3,7 +3,7 @@ header-includes:
 - \input{preamble.tex}
 fontsize: 10pt
 output: pdf_document
-geometry: "left=0.35in,right=0.35in,top=0.35in,bottom=0.6in"
+geometry: "left=0.2in,right=0.2in,top=0.2in,bottom=0.6in"
 urlcolor: #169d62
 ---
 
@@ -24,7 +24,9 @@ library(urbnthemes)
 
 set_urbn_defaults(style = "print")
 ```
-
+\noindent\makebox[\textwidth][l]{%
+  \hspace{-\dimexpr\oddsidemargin+1in}% 
+   
 \begin{tcolorbox}[boxrule=0pt,arc=0pt,colback=black,width=\paperwidth]
 
 \setlength\intextsep{0pt}
@@ -37,6 +39,7 @@ set_urbn_defaults(style = "print")
 \end{ojomainheader} \vspace{6mm}
 
 \end{tcolorbox}
+}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
@@ -50,5 +53,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 \newpage{}
 
+\noindent\makebox[\textwidth][l]{%
+  \hspace{-\dimexpr\oddsidemargin+1in}% 
+   
+\begin{tcolorbox}[boxrule=0pt,arc=0pt,colback=black,width=\paperwidth]
+
+\setlength\intextsep{0pt}
+\croppedojologo
+
+\vspace{10mm}\begin{ojomainheader}
+\ojotitle{\color{white}~~Title of a Simple Factsheet Template} \vspace{2mm}
+\end{ojomainheader} \vspace{6mm}
+
+\end{tcolorbox}
+}
 
 \footer{}
