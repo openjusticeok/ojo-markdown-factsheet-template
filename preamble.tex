@@ -1,54 +1,17 @@
-% explicitly call these packages to avoid this issue:
-% https://stackoverflow.com/questions/46080853/why-does-rendering-a-pdf-from-rmarkdown-require-closing-rstudio-between-renders?
-% utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
-\usepackage{booktabs}
-\usepackage{longtable}
-\usepackage{array}
-\usepackage{multirow}
-\usepackage{color}          % enables font colors
-\usepackage{wrapfig}
-\usepackage{float}
-\usepackage{colortbl}
+\usepackage{color}            % enables font colors
 \usepackage{pdflscape}
-\usepackage{tabu}
-\usepackage{graphicx}
-\usepackage{threeparttable}
-\usepackage[normalem]{ulem}
-\usepackage[export]{adjustbox}  % enables two column images at the top
-\usepackage{makecell}           % for library(kableExtra)
-%\usepackage{tabularx}           % for library(kableExtra)
-\usepackage{fancyhdr}           %includes fancy header package
-\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}         % enables fancy header package
+\usepackage[many]{tcolorbox}
 \usepackage{xcolor}
+\usepackage[document]{ragged2e}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{wrapfig}
 
-% set font encoding for PDFLaTeX or XeLaTeX
+% Font
 \usepackage[utf8]{inputenc}   % sets document encoding to utf8
 \usepackage[default]{lato}    % sets default font to Lato
 \usepackage[T1]{fontenc}
-%\usepackage{fontspec}         %Font package
-%\setmainfont{Pluto Sans Cond Bold}  
-\usepackage{tikz}
-\usetikzlibrary{calc}
-\usepackage{memhfixc}
-\usepackage{amssymb}          % for itemized list styles
-
-% document setup
-\definecolor{urbnblue}{HTML}{1696D2}    % defines the Urban Institute blue color
-\usepackage{enumitem}                   % bullet alignment
-\setlist[2]{nosep}                      % sets the itemsep and parsep for all level two lists to 0
-\setenumerate{nosep}                    % sets no itemsep for enumerate lists only
-\usepackage[hang,flushmargin]{footmisc} % don't indent footnotes
-\usepackage[document]{ragged2e}         % ragged right
-\usepackage[none]{hyphenat}             % disable work breaks
-\renewcommand\thefootnote{\textcolor{urbnblue}{\arabic{footnote}}} % change the color of the footnote indicator
-\hypersetup{
-  colorlinks,
-  linkcolor=urbnblue,
-  urlcolor=urbnblue,
-}
-\usepackage{parskip}
-\setlength{\parskip}{0.1in}               % set paragraph spacing
-\pagestyle{fancy}
 
 % Open Justice Oklahoma logo
 \newcommand{\ojologo}[0]{
@@ -57,44 +20,7 @@
   \end{wrapfigure}
 }
 
-% Cropped Open Justice Oklahoma logo
-\newcommand{\croppedojologo}[0]{
-  \begin{wrapfigure}{r}{.25\textwidth}
-      \includegraphics[width=.65in,keepaspectratio]{design/cropped-OJO-Logo-White.png}
-  \end{wrapfigure}
-}
-
-% contact information
-\newcommand{\footer}[0]{
-  \thispagestyle{empty}
-  \begin{tikzpicture}[remember picture, overlay]
-    \draw 
-      node[anchor=south west, minimum height=0.5in, minimum width=8.5in, text width=8in] at ($(current page.south west) + (0in,0in)$) 
-      {\thepage \space \rule{485pt}{3pt}\textcolor{black}{~OpenJusticeOK.org}};
-  \end{tikzpicture}
-}
-
-% titles (pt font)
-\newcommand{\ojotitle}[1]{
-      \textbf{\huge{#1}}
-}
-  
-% subtitles (pt font)
-\newcommand{\ojosubtitle}[1]{
-  \begin{flushleft}
-    \Large{{#1}}    
-  \end{flushleft}
-}
-
-% authors (pt font)
-\newcommand{\ojoauthors}[1]{
-  \begin{center}
-    \textit{\large{#1}}
-    \vspace{0.25in} 
-  \end{center}
-}
-
-%header for 1st page
+% OJO main header
 \newtcolorbox{ojomainheader}[1][]{%
   enhanced,
   frame hidden,
@@ -107,8 +33,20 @@
   #1
 }
 
-%heading command
-\newtcbox{heading}[1][]{%
+% OJO Title
+\newcommand{\ojotitle}[1]{
+      \textbf{\huge{#1}}
+}
+
+% OJO Subtitle
+\newcommand{\ojosubtitle}[1]{
+  \begin{flushleft}
+    \Large{{#1}}    
+  \end{flushleft}
+}
+
+% OJO Heading
+\newtcbox{ojoheading}[1][]{%
   enhanced,
   frame hidden,
   colback=white,
@@ -121,88 +59,12 @@
   #1
 }
 
-% heading 2
-\newcommand{\urbnheadingtwo}[1]{
-  \textbf{\textcolor{urbnblue}{#1}}
-}
-
-% figure label
-\newcommand{\urbnfigurenumber}[1]{
-  \textcolor{urbnblue}{\tiny{\\} \normalsize{FIGURE #1 \\}}
-}
-
-% figure title
-\newcommand{\urbnfiguretitle}[1]{
-  \textbf{\normalsize{#1} \\}
-}
-
-% figure source
-\newcommand{\urbnsource}[1]{
-  \footnotesize{\textbf{Source: }#1} \normalsize\break
-}
-
-% figure note
-\newcommand{\urbnnote}[1]{
-  \footnotesize{\textbf{Note: }#1} \normalsize\break
-}
-
-% table label
-\newcommand{\urbntablenumber}[1]{
-  \textcolor{urbnblue}{\tiny{\\} \normalsize{TABLE #1 \\}}
-}
-
-% table title
-\newcommand{\urbntabletitle}[1]{
-  \textbf{\normalsize{#1} \\}
-}
-
-% table sub title
-\newcommand{\urbntablesubtitle}[1]{
-  \textit{\normalsize{#1} \\}
-}
-
-% bullet points
-\renewcommand{\labelitemi}{\color{urbnblue}\tiny$\blacksquare$}   % blue square
-\renewcommand{\labelitemii}{\color{urbnblue}\tiny$\blacksquare$}  % blue square
-\renewcommand{\labelitemiii}{\color{urbnblue}\tiny$\blacksquare$} % blue square
-\renewcommand{\labelitemiv}{\color{urbnblue}\tiny$\blacksquare$}  % blue square
-
-\newenvironment{urbnbullets}
-{\begin{itemize}[leftmargin=*,labelindent=0.25in,labelsep=0.1875in]
-\setlength{\itemsep}{0pt}
-\setlength{\parskip}{0pt}
-\setlength{\parsep}{0pt}}
-{\end{itemize}} 
-
-% numbered list
-\newenvironment{urbnenumerate}
-{\begin{enumerate}[leftmargin=*,labelindent=0.25in,labelsep=0.15625in]
-\setlength{\itemsep}{0pt}
-\setlength{\parskip}{0pt}
-\setlength{\parsep}{0pt}}
-{\end{enumerate}} 
-
-% boiler plate
-\newcommand{\urbnboilerplate}[3]{
+% Footer
+\newcommand{\footer}[0]{
   \thispagestyle{empty}
-  
   \begin{tikzpicture}[remember picture, overlay]
-    % horizontal line
-    \draw (current page.south west) + (1in,1.25in) -- ($(current page.south east) + (-1in, 1.25in)$);  
-    % boilerplat language
-    \draw 
-      node[align=left, anchor=south west, minimum height=0.5in, minimum width=8.5in, text width=6.5in] at ($(current page.south west) + (0in,0.38in)$) 
-      {
-      \small{This fact sheet was funded by #1. The views expressed are those of the author/authors and should not be attributed to the Urban Institute, its trustees, or its funders. Further information on the Urban Institute’s funding principles is available at \href{https://www.urban.org/aboutus/our-funding/funding-principles}{urban.org/fundingprinciples.}
-      
-      
-      Copyright © #2 #3. Urban Institute. Permission is granted for reproduction of this file, with attribution to the Urban Institute.}
-      };
-      \end{tikzpicture}
+    \draw
+      node[anchor=south west, minimum height=0.5in, minimum width=8.5in, text width=8in] at ($(current page.south west) + (0in,0in)$)
+      {\thepage \space \rule{480pt}{3pt}\textcolor{black}{~OpenJusticeOK.org}};
+  \end{tikzpicture}
 }
-
-% eliminates top border line for the table
-\def\toprule{}
-
-% sets midline at 1pt
-\setlength{\lightrulewidth}{1pt}
