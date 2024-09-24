@@ -1,4 +1,5 @@
-⚠️🗃️ Archived Repository 🗃️⚠️
+# ⚠️🗃️ Archived Repository 🗃️⚠️
+
 This project is no longer maintained and has been archived.
 
 For the latest updates and ongoing development, please check out the new repository: [ojo-report-template](https://github.com/openjusticeok/ojo-report-template) 🚀
